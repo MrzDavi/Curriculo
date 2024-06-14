@@ -28,12 +28,12 @@
     <dependency>
       <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>
-      <scope>runtime</scope>
+      <scope>runtime</scope> <!-- Correct closing tag here -->
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
-      <scope>test</artifactId>
+      <scope>test</scope> <!-- Correct closing tag for <scope> -->
     </dependency>
   </dependencies>
 
