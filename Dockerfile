@@ -1,3 +1,4 @@
+# Build Stage: Use the latest Ubuntu image as the base image for the build
 FROM ubuntu:latest AS build
 
 # Update the package list and install JDK 17
@@ -22,8 +23,8 @@ FROM openjdk:17-jdk-slim
 EXPOSE 8080
 
 # Copy the built JAR file from the build stage to the runtime stage
-# Note: Change 'target/demo-0.0.1-SNAPSHOT.jar' to your actual JAR file path if it differs
-COPY --from=build /app/target/demo-0.0.1-SNAPSHOT.jar app.jar
+# Change 'target/demo-0.0.1-SNAPSHOT.jar' to 'target/curriculo-api-0.0.1-SNAPSHOT.jar'
+COPY --from=build /app/target/curriculo-api-0.0.1-SNAPSHOT.jar app.jar
 
 # Set the entry point to start the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
